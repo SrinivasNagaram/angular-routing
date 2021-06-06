@@ -1,0 +1,24 @@
+<div class="mt-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/users">Users</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Details</li>
+    </ol>
+  </nav>
+</div>
+
+<div class="card mt-3" *ngIf="user">
+  <div class="card-body">
+    <h5 class="card-title">{{user.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{user.email}}</h6>
+    <p class="card-text">Phone: {{user.phone}}</p>
+    <p class="card-text">Complay: {{user.company.name}}</p>
+    <p class="card-text">Address: {{user.address.street}}, {{user.address.suite}},
+      {{user.address.city}}, {{user.address.zipcode}}
+    </p>
+    <a href="http://{{user.website}}" target="_blank" class="card-link">{{user.website}}</a>
+  </div>
+  <div class="card-footer">
+    <a routerLink="/users/details/{{user.id}}/todos" class="btn btn-sm btn-info">Todos</a>
+  </div>
+</div>

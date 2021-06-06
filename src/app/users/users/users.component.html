@@ -1,0 +1,14 @@
+<div class="row mt-3">
+  <div class="col-md-6 mb-3" *ngFor="let user of users">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{user.name}}</h5>
+        <p class="card-text">{{user.email}}</p>
+      </div>
+      <div class="card-footer">
+        <a routerLink="/users/details/{{user.id}}" class="btn btn-sm btn-primary">Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
